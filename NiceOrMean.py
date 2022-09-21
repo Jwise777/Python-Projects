@@ -49,11 +49,11 @@ def nice_mean(nice,mean,name):
         if pick == "n":
             print("\nThe stranger walks away smiling...")
             nice = (nice + 1)
-            stop = false
+            stop = False
         if pick == "m":
             print ("\nThe stranger glares at you \nmenacingly and storms off...")
             mean = (mean+1)
-            stop = false
+            stop = False
     score(nice,mean,name) # pass the 3 variables to the score()
 
 def show_score(nice,mean,name):
