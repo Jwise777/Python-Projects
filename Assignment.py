@@ -4,33 +4,26 @@ conn = sqlite3.connect('test.db')
 
 with conn:
     cur = conn.cursor()
-    cur.execute("CREATE TABLE IF NOT EXISTS tbl_files(\
+    cur.execute("CREATE TABLE IF NOT EXISTS tbl_fileList(\
         ID INTEGER PRIMARY KEY AUTOINCREMENT, \
-        col_string TEXT, \
-        col_string2 TEXT, \
-        )")
-    fileList = ('information.docx','Hello.txt','myImage.png', \
+        col_fname TEXT)")
+    conn.commit()
+
+conn = sqlite3.connect('test.db')
+
+#tuple of names
+fileList = ('information.docx','Hello.txt','myImage.png', \
                 'myMovie.mpg','World.txt','data.pdf','myPhoto.jpg')
-    conn.commit()
+
+
+#loop through each object in the tuple to find the names taht end in TXT
+for x in fileList:
+    if x.endswith('txt'):
+        with conn:
+            cur = conn.cursor()
+        # The value for each row will be one name out of the tuple therefor (x,)
+        # will denote a one element tuple for each name ending with txt
+            cur.execute("INSERT INTO fileList (col_fname) VALUES (?)", (x,))
+            print(x)
+
 conn.close()
-
-conn = sqlite3.connect('test.db')
-
-with conn:
-    cur = conn.cursor()
-    cur.execute("INSERT INTO tbl_files (col_string, col_string2) VALUES (?, ?, ?)", \
-                ('Hello.txt', 'World.txt'))
-    conn.commit()
-conn.close()
-
-
-conn = sqlite3.connect('test.db')
-
-with conn:
-    cur = conn.cursor()
-    cur.execute("SELECT col_string, col_string2 FROM tbl_files")
-    varPerson = cur.fetchall()
-    for item in varPerson:
-        msg = "First file: {}\nSecond File: {}".format(item[0],item[1])
-    print(msg)
-
