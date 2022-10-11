@@ -21,7 +21,7 @@ class ParentWindow(Frame):
       
 
     def defaultHTML(self):
-        htmltext = "Stay tuned for our amazing summer sale!"
+        htmText = "Stay tuned for our amazing summer sale!"
         htmlFile = open("index.html", "w")
         htmlContent = "<html>\n<body>\n<h1>" + htmlText + "</h1>\n</body>\n</html>"
         htmlFile.write(htmlContent)
@@ -29,12 +29,12 @@ class ParentWindow(Frame):
         webbrowser.open_new_tab("index.html")
 
     def customHTML(self):
-        htmltext=""
-        htmlFile=open("", "w")
+        htmlText=Entry.get(self)
+        htmlFile=open("index.html", "w")
         htmlContent="<html>\n<body>\n<h1>" + htmlText + "</h1>\n</body>\n</html>"
         htmlFile.write(htmlContent)
         htmlFile.close()
-        webbrowser.open_new_tab("")
+        webbrowser.open_new_tab("index.html")
 
 if __name__ == "__main__":
     root = tk.Tk()
