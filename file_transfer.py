@@ -3,6 +3,7 @@ from tkinter import *
 import tkinter.filedialog
 import os
 import shutil
+import datetime
 
 class ParentWindow(Frame):
     def __init__(self, master):
@@ -73,6 +74,12 @@ class ParentWindow(Frame):
             #moves each file from the source to the desination
             shutil.move(source + '/' + i, destination)
             print(i + ' was successfully transferred.')
+
+        #attempt at 24 hour function
+        path = '/home/User/Documents/file.txt'
+        modification_time = os.path.getmtime(path)
+        x = datetime.datetime.now()
+        print(x)
 
     #creates function to exit program
     def exit_program(self):
