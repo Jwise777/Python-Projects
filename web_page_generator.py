@@ -7,15 +7,15 @@ class ParentWindow(Frame):
         Frame.__init__(self, master)
         self.master.title("Web Page Generator")
         self.btn = Button(self.master, text="Default HTML Page", width=30, height=2, command=self.defaultHTML)
-        self.btn.grid(padx=(10,10) ,pady=(10,10))
+        self.btn.grid(column=0, row=3, padx=(10,10) ,pady=(10,10))
         self.btncustom = Button(self.master, text="Submit Custom text", width=30, height=2, command=self.customHTML)
-        self.btncustom.grid(padx=(10,10) , pady=(10,10))
+        self.btncustom.grid(column=1, row=3, padx=(10,10) , pady=(10,10))
         #Create an Entry Widget
-        entry = Entry(win, width= 42)
-        entry.place(relx= .5, rely= .5, anchor= CENTER)
+        entry = Entry(self.master, width= 42)
+        entry.grid(column=0, row=2, columnspan=3, padx=(10,10) , pady=(10,10))
         #label widget
-        label= Label(win, text="Enter custom text, or click default HTML button", font=('Helvetica 13'))
-        label.pack()
+        label= Label(self.master, text="Enter custom text, or click default HTML button", font=('Helvetica 13'))
+        label.grid(column=0, row=0, padx=(10,10) , pady=(10,10))
 
 
       

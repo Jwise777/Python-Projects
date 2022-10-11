@@ -35,7 +35,7 @@ class ParentWindow(Frame):
         #creates button to transfer files
         self.transfer_btn = Button(text="Transfer Files", width=20, command=self.transferFiles)
         #positions transfer files button
-        self.transfer_btn.grid(row=2, column=1, pax=(200, 0), pady=(0, 15))
+        self.transfer_btn.grid(row=2, column=1, padx=(200, 0), pady=(0, 15))
 
         #creates and exit button
         self.exit_btn = Button(text="Exit", width=20, command=self.exit_program)
@@ -75,10 +75,10 @@ class ParentWindow(Frame):
             print(i + ' was successfully transferred.')
 
     #creates function to exit program
-        def exit_program(self):
-            #root is the main GUI window, the Tkinter destroy method
-            #tells python to terminate root.mainloop and all widgets inside the GUI window
-            root.destroy()
+    def exit_program(self):
+        #root is the main GUI window, the Tkinter destroy method
+        #tells python to terminate root.mainloop and all widgets inside the GUI window
+        root.destroy()
         
             
             
@@ -88,4 +88,4 @@ class ParentWindow(Frame):
 if __name__ == "__main__":
     root = tk.Tk()
     App = ParentWindow(root)
-    root.mainLoop()
+    root.mainloop()
