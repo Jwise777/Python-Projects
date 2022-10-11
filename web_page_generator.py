@@ -21,7 +21,7 @@ class ParentWindow(Frame):
       
 
     def defaultHTML(self):
-        htmText = "Stay tuned for our amazing summer sale!"
+        htmlText = "Stay tuned for our amazing summer sale!"
         htmlFile = open("index.html", "w")
         htmlContent = "<html>\n<body>\n<h1>" + htmlText + "</h1>\n</body>\n</html>"
         htmlFile.write(htmlContent)
@@ -29,7 +29,7 @@ class ParentWindow(Frame):
         webbrowser.open_new_tab("index.html")
 
     def customHTML(self):
-        htmlText.config(text=entry.get(), font= ('Helvetica 13'))
+        htmlText=entry.get()
         htmlFile=open("index.html", "w")
         htmlContent="<html>\n<body>\n<h1>" + htmlText + "</h1>\n</body>\n</html>"
         htmlFile.write(htmlContent)
