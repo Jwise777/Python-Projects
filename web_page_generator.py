@@ -29,7 +29,7 @@ class ParentWindow(Frame):
         webbrowser.open_new_tab("index.html")
 
     def customHTML(self):
-        htmlText=Entry.get(self)
+        htmlText.config(text=entry.get(), font= ('Helvetica 13'))
         htmlFile=open("index.html", "w")
         htmlContent="<html>\n<body>\n<h1>" + htmlText + "</h1>\n</body>\n</html>"
         htmlFile.write(htmlContent)
