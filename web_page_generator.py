@@ -11,8 +11,8 @@ class ParentWindow(Frame):
         self.btncustom = Button(self.master, text="Submit Custom text", width=30, height=2, command=self.customHTML)
         self.btncustom.grid(column=1, row=3, padx=(10,10) , pady=(10,10))
         #Create an Entry Widget
-        entry = Entry(self.master, width= 42)
-        entry.grid(column=0, row=2, columnspan=3, padx=(10,10) , pady=(10,10))
+        self.entry = Entry(self.master, width= 42)
+        self.entry.grid(column=0, row=2, columnspan=3, padx=(10,10) , pady=(10,10))
         #label widget
         label= Label(self.master, text="Enter custom text, or click default HTML button", font=('Helvetica 13'))
         label.grid(column=0, row=0, padx=(10,10) , pady=(10,10))
