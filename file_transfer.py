@@ -4,6 +4,7 @@ import tkinter.filedialog
 import os
 import shutil
 import datetime
+from datetime import timedelta
 
 class ParentWindow(Frame):
     def __init__(self, master):
@@ -71,15 +72,15 @@ class ParentWindow(Frame):
         source_files = os.listdir(source)
         #runs through each file in the source directory
         for i in source_files:
+             #attempt at 24 hour function
+            modification_time = os.path.gettime(path)
+            x = datetime.datetime.now()
+            print(x)
             #moves each file from the source to the desination
-            shutil.move(source + '/' + i, destination)
+            if x < 24 hours
+            shutil.move(source + 'x' + i, destination)
             print(i + ' was successfully transferred.')
 
-        #attempt at 24 hour function
-        path = '/home/User/Documents/file.txt'
-        modification_time = os.path.getmtime(path)
-        x = datetime.datetime.now()
-        print(x)
 
     #creates function to exit program
     def exit_program(self):
