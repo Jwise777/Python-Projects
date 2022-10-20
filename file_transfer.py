@@ -75,8 +75,8 @@ class ParentWindow(Frame):
              #attempt at 24 hour function
             filepath = os.path.join(source, i)
             modification_time = os.path.getmtime(filepath)
-            y = self.datetime.datetime.fromtimestamp(modification_time);
-            x = self.datetime.datetime.now - timedelta (hours=24)
+            y = datetime.datetime.fromtimestamp(modification_time);
+            x = datetime.datetime.now() - timedelta(hours=24)
             #moves each file from the source to the desination
             if x < y:
                 shutil.move(source + 'x' + i, destination)
