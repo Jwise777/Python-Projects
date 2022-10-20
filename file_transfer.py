@@ -73,13 +73,14 @@ class ParentWindow(Frame):
         #runs through each file in the source directory
         for i in source_files:
              #attempt at 24 hour function
-            modification_time = os.path.gettime(path)
-            x = datetime.datetime.now()
-            print(x)
+            filepath = os.path.join(source, i)
+            modification_time = os.path.getmtime(filepath)
+            y = self.datetime.datetime.fromtimestamp(modification_time);
+            x = self.datetime.datetime.now - timedelta (hours=24)
             #moves each file from the source to the desination
-            if x < 24 hours
-            shutil.move(source + 'x' + i, destination)
-            print(i + ' was successfully transferred.')
+            if x < y:
+                shutil.move(source + 'x' + i, destination)
+                print(i + ' was successfully transferred.')
 
 
     #creates function to exit program
