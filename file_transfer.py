@@ -79,7 +79,7 @@ class ParentWindow(Frame):
             x = datetime.datetime.now() - timedelta(hours=24)
             #moves each file from the source to the desination
             if x < y:
-                shutil.move(source + 'x' + i, destination)
+                shutil.move(source + '/' + i, destination)
                 print(i + ' was successfully transferred.')
 
 
