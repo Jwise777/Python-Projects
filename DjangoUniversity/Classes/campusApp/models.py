@@ -9,7 +9,7 @@ class UniversityCampus(models.Model):
     object = models.manager
 
     def __str__(self):
-        display_campus = '{0.title}: {0.Campus_ID}'
+        display_campus = '{0.Campus_Name}: {0.Campus_ID}'
         return display_campus.format(self)
 
     class Meta:

@@ -8,7 +8,7 @@ def home(request):
         pk = request.POST['account']
         return balance(request, pk)
     content = {'form': form}
-    return render(request, 'checkbook/index.html')
+    return render(request, 'checkbook/index.html', content)
 
 
 def create_account(request):
@@ -34,7 +34,7 @@ def balance(request, pk):
             current_total -= t.amount
             table_contents.update({t: current_total})
     content = {'account': account, 'table_contents': table_contents, 'balance': current_total}
-    return render(request, 'checkbook/BalanceSheet.html')
+    return render(request, 'checkbook/BalanceSheet.html', content)
 
 
 def transaction(request):
@@ -45,4 +45,4 @@ def transaction(request):
             form.save()
             return balance(request, pk)
     content = {'form': form}
-    return render(request, 'checkbook/AddTransaction.html')
+    return render(request, 'checkbook/AddTransaction.html', content) #
