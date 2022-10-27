@@ -1,5 +1,5 @@
 from django.db import models
-
+#Adding ability to input classes
 class UniversityClasses(models.Model):
     title = models.CharField(max_length=60, default="", blank=True, null=False)
     course_number = models.IntegerField(default="", blank=True, null=False)
@@ -7,7 +7,7 @@ class UniversityClasses(models.Model):
     duration = models.FloatField(null=True, blank=True, default=None)
 
     object = models.manager
-
+#Return of the inputted class
     def __str__(self):
         display_course = '{0.title}: {0.instructor_name}'
         return display_course.format(self)
